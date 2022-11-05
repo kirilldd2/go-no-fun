@@ -1,3 +1,3 @@
-module github.com/Ioloman/go-func
+module github.com/Ioloman/go-fun
 
 go 1.19
