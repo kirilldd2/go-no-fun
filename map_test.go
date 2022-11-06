@@ -1,6 +1,7 @@
-package fun
+package fun_test
 
 import (
+	. "github.com/Ioloman/go-no-fun"
 	"math"
 	"math/rand"
 	"testing"
@@ -41,22 +42,26 @@ func TestMap(t *testing.T) {
 
 func BenchmarkMap(b *testing.B) {
 	r := rand.New(rand.NewSource(time.Now().UnixMilli()))
+
+	inp := make([]int, 10000)
+	for i := range inp {
+		inp[i] = r.Intn(math.MaxInt)
+	}
+
 	for i := 0; i < b.N; i++ {
-		inp := make([]int, b.N)
-		for i := range inp {
-			inp[i] = r.Intn(math.MaxInt)
-		}
 		Map(IntToFloat64, inp)
 	}
 }
 
 func BenchmarkLoop(b *testing.B) {
 	r := rand.New(rand.NewSource(time.Now().UnixMilli()))
+
+	inp := make([]int, 10000)
+	for j := range inp {
+		inp[j] = r.Intn(math.MaxInt)
+	}
+
 	for i := 0; i < b.N; i++ {
-		inp := make([]int, b.N)
-		for i := range inp {
-			inp[i] = r.Intn(math.MaxInt)
-		}
 		out := make([]float64, len(inp))
 		for j := range inp {
 			out[j] = IntToFloat64(inp[j])
