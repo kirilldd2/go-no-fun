@@ -1,11 +1,12 @@
 package fun_test
 
 import (
-	. "github.com/Ioloman/go-no-fun"
 	"math"
 	"math/rand"
 	"testing"
 	"time"
+
+	. "github.com/Ioloman/go-no-fun"
 )
 
 func TestMin(t *testing.T) {
@@ -57,10 +58,11 @@ func TestMax(t *testing.T) {
 }
 
 func BenchmarkMin(b *testing.B) {
-	r := rand.New(rand.NewSource(time.Now().UnixMilli()))
+	random := rand.New(rand.NewSource(time.Now().UnixMilli()))
+
 	inp := make([]int, 10000)
 	for i := range inp {
-		inp[i] = r.Intn(math.MaxInt)
+		inp[i] = random.Intn(math.MaxInt)
 	}
 
 	for i := 0; i < b.N; i++ {

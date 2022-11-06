@@ -2,7 +2,7 @@ package fun
 
 import "golang.org/x/exp/constraints"
 
-// Less is default comparator function for builtin data-types for Min or Max
+// Less is default comparator function for builtin data-types for Min or Max.
 func Less[T constraints.Ordered](less, big T) bool {
 	return less < big
 }
@@ -30,7 +30,7 @@ func Min[T any](less func(less, big T) bool, values ...T) T {
 	return min
 }
 
-// Max - refer to Min for docs
+// Max - refer to Min for docs.
 func Max[T any](less func(less, big T) bool, values ...T) T {
 	var max T
 

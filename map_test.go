@@ -1,23 +1,24 @@
 package fun_test
 
 import (
-	. "github.com/Ioloman/go-no-fun"
 	"math"
 	"math/rand"
 	"testing"
 	"time"
+
+	. "github.com/Ioloman/go-no-fun"
 )
 
 func IntToFloat64(n int) float64 { return math.Sqrt(float64(n)) }
 
 func TestMap(t *testing.T) {
-	r := rand.New(rand.NewSource(time.Now().UnixMilli()))
+	random := rand.New(rand.NewSource(time.Now().UnixMilli()))
 
 	t.Run("ints to float64 by sqrt", func(t *testing.T) {
 		inp := make([]int, 1000)
 		want := make([]float64, 1000)
 		for i := range inp {
-			inp[i] = r.Intn(math.MaxInt)
+			inp[i] = random.Intn(math.MaxInt)
 			want[i] = IntToFloat64(inp[i])
 		}
 		result := Map(IntToFloat64, inp)
@@ -41,11 +42,11 @@ func TestMap(t *testing.T) {
 }
 
 func BenchmarkMap(b *testing.B) {
-	r := rand.New(rand.NewSource(time.Now().UnixMilli()))
+	random := rand.New(rand.NewSource(time.Now().UnixMilli()))
 
 	inp := make([]int, 10000)
 	for i := range inp {
-		inp[i] = r.Intn(math.MaxInt)
+		inp[i] = random.Intn(math.MaxInt)
 	}
 
 	for i := 0; i < b.N; i++ {
@@ -54,11 +55,11 @@ func BenchmarkMap(b *testing.B) {
 }
 
 func BenchmarkLoop(b *testing.B) {
-	r := rand.New(rand.NewSource(time.Now().UnixMilli()))
+	random := rand.New(rand.NewSource(time.Now().UnixMilli()))
 
 	inp := make([]int, 10000)
 	for j := range inp {
-		inp[j] = r.Intn(math.MaxInt)
+		inp[j] = random.Intn(math.MaxInt)
 	}
 
 	for i := 0; i < b.N; i++ {
