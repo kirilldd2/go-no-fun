@@ -9,8 +9,8 @@ package fun
 func Map[IN, OUT any](fn func(IN) OUT, data []IN) []OUT {
 	res := make([]OUT, len(data))
 
-	for i := range data {
-		res[i] = fn(data[i])
+	for i, item := range data {
+		res[i] = fn(item)
 	}
 
 	return res
