@@ -29,6 +29,14 @@ func TestMap(t *testing.T) {
 			}
 		}
 	})
+
+	t.Run("empty input slice", func(t *testing.T) {
+		var inp []int
+		result := Map(IntToFloat64, inp)
+		if len(result) != 0 {
+			t.Error("result for input empty slice is not empty slice")
+		}
+	})
 }
 
 func BenchmarkMap(b *testing.B) {
