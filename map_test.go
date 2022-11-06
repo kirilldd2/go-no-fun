@@ -49,23 +49,18 @@ func BenchmarkMap(b *testing.B) {
 		inp[i] = random.Intn(math.MaxInt)
 	}
 
-	for i := 0; i < b.N; i++ {
-		Map(IntToFloat64, inp)
-	}
-}
-
-func BenchmarkLoop(b *testing.B) {
-	random := rand.New(rand.NewSource(time.Now().UnixMilli()))
-
-	inp := make([]int, 10000)
-	for j := range inp {
-		inp[j] = random.Intn(math.MaxInt)
-	}
-
-	for i := 0; i < b.N; i++ {
-		out := make([]float64, len(inp))
-		for j := range inp {
-			out[j] = IntToFloat64(inp[j])
+	b.Run("Map", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			Map(IntToFloat64, inp)
 		}
-	}
+	})
+
+	b.Run("For loop", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			out := make([]float64, len(inp))
+			for j := range inp {
+				out[j] = IntToFloat64(inp[j])
+			}
+		}
+	})
 }
