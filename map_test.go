@@ -11,14 +11,23 @@ import (
 
 func IntToFloat64(n int) float64 { return math.Sqrt(float64(n)) }
 
+func createRandomSlice(n int) []int {
+	r := rand.New(rand.NewSource(time.Now().UnixMilli()))
+
+	slice := make([]int, n)
+	for i := range slice {
+		slice[i] = r.Intn(math.MaxInt)
+	}
+
+	return slice
+}
+
 func TestMap(t *testing.T) {
-	random := rand.New(rand.NewSource(time.Now().UnixMilli()))
 
 	t.Run("ints to float64 by sqrt", func(t *testing.T) {
-		inp := make([]int, 1000)
+		inp := createRandomSlice(1000)
 		want := make([]float64, 1000)
 		for i := range inp {
-			inp[i] = random.Intn(math.MaxInt)
 			want[i] = IntToFloat64(inp[i])
 		}
 		result := Map(IntToFloat64, inp)
@@ -42,12 +51,7 @@ func TestMap(t *testing.T) {
 }
 
 func BenchmarkMap(b *testing.B) {
-	random := rand.New(rand.NewSource(time.Now().UnixMilli()))
-
-	inp := make([]int, 10000)
-	for i := range inp {
-		inp[i] = random.Intn(math.MaxInt)
-	}
+	inp := createRandomSlice(1000)
 
 	b.Run("Map", func(b *testing.B) {
 		for i := 0; i < b.N; i++ {
