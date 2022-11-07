@@ -4,6 +4,22 @@ import "errors"
 
 var errOutOfBoundaries = errors.New("incorrect boundaries of slice")
 
+// Equal compares two flat slices that contain comparable type.
+func Equal[T comparable](a, b []T) bool {
+	if len(a) != len(b) {
+		return false
+	}
+
+	for i := range a {
+		if a[i] != b[i] {
+			return false
+		}
+	}
+
+	return true
+}
+
+// Reverse reverses slice in-place.
 func Reverse[T any](slice []T) {
 	l := len(slice)
 	for i := 0; i < l/2; i++ {
