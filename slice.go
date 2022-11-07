@@ -2,6 +2,8 @@ package fun
 
 import "errors"
 
+var errOutOfBoundaries = errors.New("incorrect boundaries of slice")
+
 func Reverse[T any](slice []T) {
 	l := len(slice)
 	for i := 0; i < l/2; i++ {
@@ -12,6 +14,7 @@ func Reverse[T any](slice []T) {
 func Reversed[T any](slice []T) []T {
 	newSlice := make([]T, len(slice))
 	Reverse(newSlice)
+
 	return newSlice
 }
 
@@ -27,7 +30,7 @@ func Index[T comparable](slice []T, value T) int {
 
 func IndexAB[T comparable](slice []T, value T, a, b int) (int, error) {
 	if a < 0 || b <= a || b > len(slice) {
-		return 0, errors.New("incorrect boundaries of slice")
+		return 0, errOutOfBoundaries
 	}
 
 	slice = slice[a:b]
