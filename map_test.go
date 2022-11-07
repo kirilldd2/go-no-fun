@@ -23,7 +23,6 @@ func createRandomSlice(n int) []int {
 }
 
 func TestMap(t *testing.T) {
-
 	t.Run("ints to float64 by sqrt", func(t *testing.T) {
 		inp := createRandomSlice(1000)
 		want := make([]float64, 1000)

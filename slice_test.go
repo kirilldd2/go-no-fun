@@ -32,6 +32,7 @@ func TestEqual(t *testing.T) {
 
 func BenchmarkEqual(b *testing.B) {
 	var eq []int
+
 	n := 10000
 	slice := createRandomSlice(n)
 
