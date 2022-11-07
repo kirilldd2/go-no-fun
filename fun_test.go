@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/Ioloman/go-no-fun"
+	"github.com/Ioloman/go-no-fun"
 )
 
 func IntToFloat64(n int) float64 { return math.Sqrt(float64(n)) }
@@ -29,7 +29,7 @@ func TestMap(t *testing.T) {
 		for i := range inp {
 			want[i] = IntToFloat64(inp[i])
 		}
-		result := Map(IntToFloat64, inp)
+		result := fun.Map(IntToFloat64, inp)
 		if len(result) != len(inp) {
 			t.Errorf("result len = %d, input's len = %d", len(result), len(inp))
 		}
@@ -42,7 +42,7 @@ func TestMap(t *testing.T) {
 
 	t.Run("empty input slice", func(t *testing.T) {
 		var inp []int
-		result := Map(IntToFloat64, inp)
+		result := fun.Map(IntToFloat64, inp)
 		if len(result) != 0 {
 			t.Error("result for input empty slice is not empty slice")
 		}
@@ -54,7 +54,7 @@ func BenchmarkMap(b *testing.B) {
 
 	b.Run("Map", func(b *testing.B) {
 		for i := 0; i < b.N; i++ {
-			Map(IntToFloat64, inp)
+			fun.Map(IntToFloat64, inp)
 		}
 	})
 
