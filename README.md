@@ -7,7 +7,7 @@
 [![GoDoc](https://godoc.org/github.com/kirilldd2/go-no-fun?status.svg)](https://pkg.go.dev/github.com/kirilldd2/go-no-fun)
 ![tests](https://img.shields.io/github/workflow/status/kirilldd2/go-no-fun/Tests?label=tests&logo=github&style=flat-square)
 [![Go report](https://goreportcard.com/badge/github.com/kirilldd2/go-no-fun)](https://goreportcard.com/report/github.com/kirilldd2/go-no-fun)
-[![codecov](https://codecov.io/gh/kirilldd2/go-no-fun/branch/main/graph/badge.svg?token=jNRLNzybbM)](https://codecov.io/gh/kirilldd2/go-no-fun)
+[![codecov](https://codecov.io/gh/kirilldd2/go-no-fun/branch/master/graph/badge.svg?token=jNRLNzybbM)](https://codecov.io/gh/kirilldd2/go-no-fun)
 [![License](https://img.shields.io/github/license/kirilldd2/go-no-fun?style=flat-square)](./LICENSE)
 
 
