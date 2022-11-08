@@ -30,6 +30,7 @@ func Reverse[T any](slice []T) {
 // Reversed returns reversed slice, original slice is not mutated.
 func Reversed[T any](slice []T) []T {
 	newSlice := make([]T, len(slice))
+	copy(newSlice, slice)
 	Reverse(newSlice)
 
 	return newSlice
