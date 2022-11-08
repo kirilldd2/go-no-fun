@@ -22,7 +22,7 @@ Signatures like __DoX2 -> DoX9__ is a big no-no*.
 
 * [x] Map
 * [x] Reduce
-* [ ] Filter
+* [x] Filter
 * [x] Min/Max
 * [x] Reverse/Reversed
 * [x] Index/IndexAB
