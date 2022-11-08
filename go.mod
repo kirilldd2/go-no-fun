@@ -1,4 +1,4 @@
-module github.com/Ioloman/go-no-fun
+module github.com/kirilldd2/go-no-fun
 
 go 1.19
 

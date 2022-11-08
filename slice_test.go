@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/Ioloman/go-no-fun"
+	fun "github.com/kirilldd2/go-no-fun"
 )
 
 func TestEqual(t *testing.T) {
