@@ -3,6 +3,7 @@ package fun_test
 import (
 	"math"
 	"math/rand"
+	"strconv"
 	"testing"
 	"time"
 
@@ -64,6 +65,33 @@ func BenchmarkMap(b *testing.B) {
 			for j := range inp {
 				out[j] = IntToFloat64(inp[j])
 			}
+		}
+	})
+}
+
+func TestReduce(t *testing.T) {
+	t.Run("concat", func(t *testing.T) {
+		inp := []string{"No", "Fun", " !"}
+		want := "NoFun !"
+		res := fun.Reduce(func(acc string, item string) string {
+			return acc + item
+		}, inp, "")
+		if res != want {
+			t.Errorf("got %v, wanted %v", res, want)
+		}
+	})
+
+	t.Run("squared sum", func(t *testing.T) {
+		inp := []string{"1", "2", "3", "4"}
+		want := 30
+		res := fun.Reduce(func(acc int, item string) int {
+			num, _ := strconv.ParseInt(item, 10, 32)
+			numInt := int(num)
+
+			return numInt*numInt + acc
+		}, inp, 0)
+		if res != want {
+			t.Errorf("got %v, wanted %v", res, want)
 		}
 	})
 }
