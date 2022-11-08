@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Ioloman/go-no-fun"
+	fun "github.com/kirilldd2/go-no-fun"
 )
 
 func IntToFloat64(n int) float64 { return math.Sqrt(float64(n)) }

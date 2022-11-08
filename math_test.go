@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Ioloman/go-no-fun"
+	fun "github.com/kirilldd2/go-no-fun"
 )
 
 func TestMin(t *testing.T) {
