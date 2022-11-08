@@ -3,11 +3,11 @@
 ------------------
 
 [![tag](https://img.shields.io/github/v/tag/kirilldd2/go-no-fun?style=flat-square)](https://github.com/kirilldd2/go-no-fun)
-![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.18-lightgrey)
-[![GoDoc](https://godoc.org/github.com/kirilldd2/go-no-fun?status.svg)](https://pkg.go.dev/github.com/kirilldd2/go-no-fun)
+![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.18-lightgrey?style=flat-square)
+[![GoDoc](https://pkg.go.dev/badge/github.com/kirilldd2/go-no-fun.svg)](https://pkg.go.dev/github.com/kirilldd2/go-no-fun)
 ![tests](https://img.shields.io/github/workflow/status/kirilldd2/go-no-fun/Tests?label=tests&logo=github&style=flat-square)
-[![Go report](https://goreportcard.com/badge/github.com/kirilldd2/go-no-fun)](https://goreportcard.com/report/github.com/kirilldd2/go-no-fun)
-[![codecov](https://codecov.io/gh/kirilldd2/go-no-fun/branch/master/graph/badge.svg?token=jNRLNzybbM)](https://codecov.io/gh/kirilldd2/go-no-fun)
+[![Go report](https://goreportcard.com/badge/github.com/kirilldd2/go-no-fun?style=flat-square)](https://goreportcard.com/report/github.com/kirilldd2/go-no-fun)
+[![codecov](https://img.shields.io/codecov/c/github/kirilldd2/go-no-fun?style=flat-square&token=jNRLNzybbM)](https://codecov.io/gh/kirilldd2/go-no-fun)
 [![License](https://img.shields.io/github/license/kirilldd2/go-no-fun?style=flat-square)](./LICENSE)
 
 
