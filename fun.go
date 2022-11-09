@@ -51,3 +51,27 @@ func Filter[T any](fn func(item T) bool, iterable []T) []T {
 
 	return adjusted
 }
+
+// Any returns true if there's any non-nil values in iterable, false otherwise
+func Any[T comparable](iterable []T) bool {
+	var zero T
+	for _, item := range iterable {
+		if item != zero {
+			return true
+		}
+	}
+
+	return false
+}
+
+// All returns true if all the values in iterable are non-nil, false otherwise
+func All[T comparable](iterable []T) bool {
+	var zero T
+	for _, item := range iterable {
+		if item == zero {
+			return false
+		}
+	}
+
+	return true
+}

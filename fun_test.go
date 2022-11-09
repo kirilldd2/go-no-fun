@@ -116,3 +116,45 @@ func TestFilter(t *testing.T) {
 		})
 	}
 }
+
+func TestAny(t *testing.T) {
+	tests := []struct {
+		name string
+		inp  []int
+		out  bool
+	}{
+		{"true", []int{1, 0, 0, 4}, true},
+		{"false", []int{0, 0, 0, 0}, false},
+		{"empty", []int{}, false},
+	}
+
+	for _, test := range tests {
+		test := test
+		t.Run(test.name, func(t *testing.T) {
+			if result := fun.Any(test.inp); test.out != result {
+				t.Errorf("wanted %v, got %v", test.out, result)
+			}
+		})
+	}
+}
+
+func TestAll(t *testing.T) {
+	tests := []struct {
+		name string
+		inp  []int
+		out  bool
+	}{
+		{"false", []int{1, 0, 0, 4}, false},
+		{"true", []int{1, 2, 3, 4}, true},
+		{"empty", []int{}, true},
+	}
+
+	for _, test := range tests {
+		test := test
+		t.Run(test.name, func(t *testing.T) {
+			if result := fun.All(test.inp); test.out != result {
+				t.Errorf("wanted %v, got %v", test.out, result)
+			}
+		})
+	}
+}

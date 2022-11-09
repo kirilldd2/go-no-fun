@@ -26,4 +26,4 @@ Signatures like __DoX2 -> DoX9__ is a big no-no*.
 * [x] Min/Max
 * [x] Reverse/Reversed
 * [x] Index/IndexAB
-* [ ] Any/All
+* [x] Any/All
