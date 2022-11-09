@@ -121,7 +121,7 @@ func TestIndexAB(t *testing.T) {
 		err             bool
 	}{
 		{"success full", []int{1, 2, 3, 4}, 0, 4, 2, 1, false},
-		{"success", []int{1, 2, 3, 4}, 0, 3, 2, 1, false},
+		{"success", []int{1, 2, 3, 4}, 1, 3, 2, 1, false},
 		{"not found", []int{1, 2, 3, 4}, 0, 2, 3, -1, false},
 		{"not found before", []int{1, 2, 3, 4}, 1, 3, 1, -1, false},
 		{"error a==b", []int{1, 2, 3, 4}, 1, 1, 1, -1, true},

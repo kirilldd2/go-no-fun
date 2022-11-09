@@ -58,7 +58,7 @@ func IndexAB[T comparable](slice []T, value T, a, b int) (int, error) {
 	slice = slice[a:b]
 	for i, item := range slice {
 		if item == value {
-			return i, nil
+			return i + a, nil
 		}
 	}
 
