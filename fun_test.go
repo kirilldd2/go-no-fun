@@ -95,3 +95,24 @@ func TestReduce(t *testing.T) {
 		}
 	})
 }
+
+func TestFilter(t *testing.T) {
+	tests := []struct {
+		name     string
+		inp, out []int
+		fn       func(int) bool
+	}{
+		{"some", []int{1, 2, 3, 4}, []int{3, 4}, func(item int) bool { return item >= 3 }},
+		{"all", []int{1, 2, 3, 4}, []int{}, func(item int) bool { return item >= 6 }},
+		{"none", []int{1, 2, 3, 4}, []int{1, 2, 3, 4}, func(item int) bool { return item >= 0 }},
+	}
+
+	for _, test := range tests {
+		test := test
+		t.Run(test.name, func(t *testing.T) {
+			if result := fun.Filter(test.fn, test.inp); !fun.Equal(test.out, result) {
+				t.Errorf("wanted %v, got %v", test.out, result)
+			}
+		})
+	}
+}
