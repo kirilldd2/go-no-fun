@@ -10,9 +10,6 @@ func Less[T constraints.Ordered](less, big T) bool {
 // Min returns minimum out of values.
 // To compare values "less" function needs to be provided. Basic example is Less.
 // If no values provided returns zero value of T.
-// Example:
-//
-//	Min(func(l, b map[string]int) { return l["num"] < b["num"] }, []map[string]int{{"num": 2}, {"num": 3}}...)
 func Min[T any](less func(less, big T) bool, values ...T) T {
 	var min T
 
@@ -30,7 +27,9 @@ func Min[T any](less func(less, big T) bool, values ...T) T {
 	return min
 }
 
-// Max - refer to Min for docs.
+// Max returns maximum out of values.
+// To compare values "less" function needs to be provided. Basic example is Less.
+// If no values provided returns zero value of T.
 func Max[T any](less func(less, big T) bool, values ...T) T {
 	var max T
 
