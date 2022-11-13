@@ -4,6 +4,8 @@ Utilizes power of Go 1.18 generics.
 */
 package fun
 
+import "golang.org/x/exp/constraints"
+
 // Map takes function that takes a value of type IN and returns a value of type OUT and a slice of type IN.
 // Returns slice of type OUT.
 func Map[IN, OUT any](fn func(IN) OUT, data []IN) []OUT {
@@ -65,4 +67,16 @@ func All[T comparable](iterable []T) bool {
 	}
 
 	return true
+}
+
+// Sum returns by-elements sum of slice.
+// If slice is empty returns zero value of T. Only for built-in types that support + operator.
+func Sum[T constraints.Ordered | constraints.Complex](iterable []T) T {
+	var sum T
+
+	for _, item := range iterable {
+		sum += item
+	}
+
+	return sum
 }

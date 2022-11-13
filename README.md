@@ -33,6 +33,6 @@ compared to the same thing written via for loop. So think twice before using thi
 * [x] [Any](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Any)/[All](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#All)
 * [ ] ExtendMap/ExtendSlice/ExtendedMap/ExtendedSlice
 * [ ] Range
-* [ ] Sum
+* [x] Sum
 * [ ] Set + methods
 * [ ] Fast versions

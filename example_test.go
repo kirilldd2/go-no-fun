@@ -150,3 +150,15 @@ func ExampleIndexAB() {
 
 	// Output: 3
 }
+
+func ExampleSum() {
+	resultInts := fun.Sum([]int{6, -5, 10})
+	resultStr := fun.Sum([]string{"Hello,", " gentlemen", "!"})
+
+	fmt.Println(resultInts)
+	fmt.Println(resultStr)
+
+	// Output:
+	// 11
+	// Hello, gentlemen!
+}

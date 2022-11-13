@@ -175,3 +175,44 @@ func TestAll(t *testing.T) {
 		})
 	}
 }
+
+func TestSum(t *testing.T) {
+	tests := []struct {
+		name string
+		inp  []int
+		out  int
+	}{
+		{"one", []int{1}, 1},
+		{"sum1", []int{1, 2, 3, 4}, 10},
+		{"sum2", []int{-5, 5, 5}, 5},
+		{"empty", []int{}, 0},
+	}
+
+	strTests := []struct {
+		name string
+		inp  []string
+		out  string
+	}{
+		{"one", []string{"Hello"}, "Hello"},
+		{"sum1", []string{"Hello", " gentlemen", "!"}, "Hello gentlemen!"},
+		{"empty", []string{}, ""},
+	}
+
+	for _, test := range tests {
+		test := test
+		t.Run(test.name, func(t *testing.T) {
+			if result := fun.Sum(test.inp); test.out != result {
+				t.Errorf("wanted %v, got %v", test.out, result)
+			}
+		})
+	}
+
+	for _, test := range strTests {
+		test := test
+		t.Run(test.name, func(t *testing.T) {
+			if result := fun.Sum(test.inp); test.out != result {
+				t.Errorf("wanted %v, got %v", test.out, result)
+			}
+		})
+	}
+}
