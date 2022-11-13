@@ -51,7 +51,7 @@ func TestMap(t *testing.T) {
 }
 
 func BenchmarkMap(b *testing.B) {
-	inp := createRandomSlice(1000)
+	inp := createRandomSlice(100000)
 
 	b.Run("Map", func(b *testing.B) {
 		for i := 0; i < b.N; i++ {
@@ -65,6 +65,23 @@ func BenchmarkMap(b *testing.B) {
 			for j := range inp {
 				out[j] = IntToFloat64(inp[j])
 			}
+		}
+	})
+
+	// copy of map for concrete types
+	MapIntToFloat64 := func(fn func(int) float64, data []int) []float64 {
+		res := make([]float64, len(data))
+
+		for i, item := range data {
+			res[i] = fn(item)
+		}
+
+		return res
+	}
+
+	b.Run("Concrete Map", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			MapIntToFloat64(IntToFloat64, inp)
 		}
 	})
 }
