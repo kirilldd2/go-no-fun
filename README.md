@@ -17,6 +17,9 @@ python standard library and "[samber/lo](https://github.com/samber/lo)" Go packa
 *Designed with simplicity in mind. In this project I will try to implement simple and useful API. 
 Signatures like __DoX2 -> DoX9__ is a big no-no*.
 
+**‼ Disclaimer:** In some cases this kind of approach + generics gives big overhead, 
+compared to the same thing written via for loop. So think twice before using this where performance is important. 
+
 ------------------
 ## Checklist
 
@@ -28,3 +31,8 @@ Signatures like __DoX2 -> DoX9__ is a big no-no*.
 * [x] [Equal](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Equal)
 * [x] [Index](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Index)/[IndexAB](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#IndexAB)
 * [x] [Any](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Any)/[All](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#All)
+* [ ] ExtendMap/ExtendSlice/ExtendedMap/ExtendedSlice
+* [ ] Range
+* [ ] Sum
+* [ ] Set + methods
+* [ ] Fast versions
