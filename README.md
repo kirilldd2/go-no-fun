@@ -20,10 +20,11 @@ Signatures like __DoX2 -> DoX9__ is a big no-no*.
 ------------------
 ## Checklist
 
-* [x] Map
-* [x] Reduce
-* [x] Filter
-* [x] Min/Max
-* [x] Reverse/Reversed
-* [x] Index/IndexAB
-* [x] Any/All
+* [x] [Map](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Map)
+* [x] [Reduce](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Reduce)
+* [x] [Filter](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Filter)
+* [x] [Min](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Min)/[Max](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Max)
+* [x] [Reverse](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Reverse)/[Reversed](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Reversed)
+* [x] [Equal](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Equal)
+* [x] [Index](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Index)/[IndexAB](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#IndexAB)
+* [x] [Any](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#Any)/[All](https://pkg.go.dev/github.com/kirilldd2/go-no-fun#All)
