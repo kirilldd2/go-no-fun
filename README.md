@@ -34,5 +34,5 @@ compared to the same thing written via for loop. So think twice before using thi
 * [ ] ExtendMap/ExtendSlice/ExtendedMap/ExtendedSlice
 * [ ] Range
 * [x] Sum
-* [ ] Set + methods
+* [x] Set + methods
 * [ ] Fast versions
