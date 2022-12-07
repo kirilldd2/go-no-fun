@@ -1,6 +1,7 @@
 package fun_test
 
 import (
+	"github.com/kirilldd2/go-no-fun/fixtures"
 	"reflect"
 	"testing"
 
@@ -34,7 +35,7 @@ func BenchmarkEqual(b *testing.B) {
 	var eq []int
 
 	n := 10000
-	slice := createRandomSlice(n)
+	slice := fixtures.CreateRandomSlice(n)
 
 	copy(eq, slice)
 
